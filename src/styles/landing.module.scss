@@ -1,0 +1,25 @@
+.content {
+    height: 100vh;
+    width: 100%;
+    padding: 0px 100px;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.wrapper {
+    width: 40%;
+    h1 {
+        color: rgb(150, 10, 10);
+        font-size: 5rem;
+    }
+    p {
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        line-height: 30px;
+    }
+}

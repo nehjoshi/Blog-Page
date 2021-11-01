@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lato";
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+
+.nav {
+  position: fixed;
+  padding: 20px 100px 20px 30px;
+  width: 100%;
+  color: #fff;
+  background-color: transparent;
+  z-index: 101;
+}
+
+@media screen and (max-width: 760px) {
+  .nav {
+    padding: 20px 0px 20px 0px;
+  }
+}
+
+.nav h2 {
+  display: inline-block;
+}
+
+@media screen and (max-width: 760px) {
+  .nav h2 {
+    text-align: center;
+    display: block;
+  }
+}
+
+.nav .navLinks {
+  float: right;
+}
+
+@media screen and (max-width: 760px) {
+  .nav .navLinks {
+    display: none;
+  }
+}
+
+.nav .navLinks li {
+  display: inline-block;
+  margin: 0px 20px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+
+.nav .navLinks li:hover {
+  border-color: #fff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=globalStyles.module.css.map */

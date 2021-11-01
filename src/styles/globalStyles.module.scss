@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$main-font: "Lato";
+$heading-color: rgb(46, 44, 44);
+$text-color: rgb(129, 123, 123);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: $main-font;
+    list-style-type: none;
+    scroll-behavior: smooth;
+}
+.nav {
+    position: fixed;
+    padding: 20px 100px 20px 30px;
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    // box-shadow: 0px 6px 7px 0px rgba(50, 50, 50, 0.75);
+
+    @media screen and (max-width: 760px){
+        padding: 20px 0px 20px 0px;
+    }
+    z-index: 101;
+    h2 {
+        display: inline-block;
+        @media screen and (max-width: 760px){
+            text-align: center;
+            display: block;
+        }
+    }
+    .navLinks {
+        float: right;
+        @media screen and (max-width: 760px){
+            display: none;
+        }
+    }
+    .navLinks li{
+        display: inline-block;
+        margin: 0px 20px;
+        font-size: 1.1rem;
+        border-bottom: 2px solid transparent;
+        transition: 0.2s all ease;
+        &:hover {
+            border-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
