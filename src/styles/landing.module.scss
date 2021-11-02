@@ -1,3 +1,40 @@
+.nav {
+    position: fixed;
+    padding: 20px 100px 20px 30px;
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+
+    @media screen and (max-width: 760px){
+        padding: 20px 0px 20px 0px;
+    }
+    z-index: 101;
+    h2 {
+        display: inline-block;
+        @media screen and (max-width: 760px){
+            text-align: center;
+            display: block;
+        }
+    }
+    .navLinks {
+        float: right;
+        @media screen and (max-width: 760px){
+            display: none;
+        }
+    }
+    .navLinks li{
+        display: inline-block;
+        margin: 0px 20px;
+        font-size: 1.1rem;
+        border-bottom: 2px solid transparent;
+        transition: 0.2s all ease;
+        &:hover {
+            border-color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
 .content {
     height: 100vh;
     width: 100%;
@@ -14,12 +51,38 @@
 .wrapper {
     width: 40%;
     h1 {
-        color: rgb(150, 10, 10);
+        // color: rgb(150, 10, 10);
+        color: #9B3E63;
         font-size: 5rem;
     }
     p {
         color: rgb(255, 255, 255);
         font-size: 1.2rem;
         line-height: 30px;
+    }
+}
+.button {
+    width: fit-content;
+    height: 50px;
+    margin: 10px auto;
+    padding: 10px 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    color: rgb(150, 10, 10);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: rgb(150, 10, 10);
+        color: rgb(255, 255, 255);
+    }
+    &:active {
+        background-color: rgb(61, 5, 5);
     }
 }
