@@ -13,7 +13,6 @@ export default function BlogIndex({ data }) {
         borderBottom: '1px solid #e5e5e5',
         fontWeight: 'bold',
     }
-    document.title = "Neh's Blogs | Browse"
 
     return (
         <Layout>

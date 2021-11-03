@@ -2,7 +2,6 @@ import { Link } from 'gatsby';
 import React from 'react'
 import * as styles from '../styles/landing.module.css';
 export default function App() {
-  document.title = "Neh's Blogs"
   return (
     <>
       <nav className={styles.nav}>
