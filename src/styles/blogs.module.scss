@@ -2,6 +2,7 @@
     position: relative;
     top: 60px;
     padding: 20px 0px;
+    width: 100%;
 }
 .upperNav {
     height: 60px;
@@ -34,17 +35,38 @@
 .blogWrapper {
     height: 100vh;
     width: 100%;
-    padding: 20px 20px;
+    padding: 20px 150px;
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2em;
     background-color: rgb(247, 247, 247);
 }
-.blog-container {
+.blogContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: white;
-    border: 1px solid blue;
-    height: 300px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px 20px;
+    height: fit-content;
+    border-radius: 2px;
+    border-bottom: 6px solid rgb(0, 38, 255);
+    h1 {
+        font-size: 2rem;
+        color: rgb(57, 47, 80);
+    }
+    span {
+        color: rgb(102, 0, 185);
+        font-size: 1rem;
+    }
+    p {
+        color: rgb(131, 131, 131);
+    }
+    img {
+        height: 300px;
+    }
+    small {
+        color: rgb(94, 94, 94);
+        margin-top: 10px;
+        font-size: 1rem;
+    }
 }
