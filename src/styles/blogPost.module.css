@@ -1,0 +1,46 @@
+body {
+  background-color: #fafafa;
+}
+
+.wrapper {
+  position: relative;
+  top: 150px;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.wrapper .category, .wrapper .date {
+  font-size: 1.2rem;
+  color: #969696;
+  margin: 20px 0px;
+}
+
+.wrapper .date {
+  margin-bottom: 20px;
+}
+
+.wrapper .title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #585858;
+}
+
+.wrapper .content {
+  color: #444444;
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+  }
+  .wrapper .title {
+    font-size: 2.5rem;
+  }
+  .wrapper .content {
+    font-size: 1.3rem;
+  }
+}
+/*# sourceMappingURL=blogPost.module.css.map */

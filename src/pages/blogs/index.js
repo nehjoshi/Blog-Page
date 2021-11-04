@@ -37,7 +37,7 @@ export default function BlogIndex({ data }) {
                 <section className={styles.blogWrapper}>
 
                     {blogData.map(blog => 
-                        <BlogCard title={blog.frontmatter.title} date={blog.frontmatter.date} category={blog.frontmatter.category} description={blog.frontmatter.description} id={blog.frontmatter.id} />
+                        <BlogCard title={blog.frontmatter.title} date={blog.frontmatter.date} category={blog.frontmatter.category} description={blog.frontmatter.description} id={blog.frontmatter.id} slug={blog.frontmatter.slug} />
                     )}
 
                     {/* <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
@@ -53,7 +53,7 @@ export default function BlogIndex({ data }) {
 }
 export const query = graphql`
 query MyQuery {
-    allMarkdownRemark(sort: {fields: id, order: DESC}) {
+    allMarkdownRemark(sort: {fields: frontmatter___id, order: ASC}) {
       nodes {
         frontmatter {
           category
@@ -61,10 +61,12 @@ query MyQuery {
           description
           id
           title
+          slug
         }
         html
       }
     }
   }
+  
   
 `
