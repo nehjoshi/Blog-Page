@@ -2,7 +2,8 @@
 title: Web Vulnerabilites Part 4 Flask
 description: An amazing blog to read all about vulnerabilties of Node.JS
 id: 3
-date: 2nd November, 2021
+date: 22nd November, 2021
+actualDate: "2021-11-22"
 category: Web dev
 slug: web-vulnerabilities-part3-nodejs
 ---

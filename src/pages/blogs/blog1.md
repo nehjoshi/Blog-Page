@@ -3,6 +3,7 @@ title: Web Vulnerabilites Part 1 PHP
 description: An amazing blog to read all about vulnerabilties of PHP
 id: 1
 date: 3rd October, 2021
+actualDate: "2021-10-03"
 category: Web dev
 slug: web-vulnerabilities-part1-php
 ---

@@ -3,6 +3,7 @@ title: Web Vulnerabilites Part 3 Node.JS
 description: An amazing blog to read all about vulnerabilties of Node.JS
 id: 2
 date: 2nd November, 2021
+actualDate: "2021-11-02"
 category: Web dev
 slug: web-vulnerabilities-part3-nodejs
 ---

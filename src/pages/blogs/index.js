@@ -8,10 +8,48 @@ export default function BlogIndex({ data }) {
 
     const [active, setActive] = React.useState(0);
     const blogData = data.allMarkdownRemark.nodes;
+    const [blogs, setBlogs] = React.useState(blogData);
     const activeItem = {
         backgroundColor: '#96d6ff',
         borderBottom: '1px solid #e5e5e5',
         fontWeight: 'bold',
+    }
+
+    const handleFilter = (cat) => {
+        switch (cat) {
+            case 1:
+                setActive(1);
+                setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Web dev'));
+                break;
+            case 2:
+                setActive(2);
+                setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Technical'));
+                break;
+            case 3:
+                setActive(3);
+                break;
+            case 4:
+                setActive(4);
+                break;
+            case "date":
+                console.log(blogs);
+                let sortedBlogs = blogs;
+                for (let i = 0; i < sortedBlogs.length; i++) {
+                    for (let j = i; j < sortedBlogs.length; j++) {
+                        if (sortedBlogs[i].frontmatter.id < sortedBlogs[j].frontmatter.id) {
+                            let temp = sortedBlogs[j];
+                            sortedBlogs[j] = sortedBlogs[i];
+                            sortedBlogs[i] = temp;
+                        }
+                    }
+                }
+                setBlogs(sortedBlogs);
+                setBlogs(blogs.filter(blog => blog.frontmatter.category));
+                break;
+            default:
+                setBlogs(blogData);
+
+        }
     }
 
     return (
@@ -21,36 +59,36 @@ export default function BlogIndex({ data }) {
                     <div className={styles.navHeading}>
                         Browse by Category
                     </div>
-                    <div className={styles.navItem} style={active === 1 ? activeItem : null} onClick={() => setActive(1)}>
+                    <div className={styles.navItem} style={active === 1 ? activeItem : null} onClick={() => handleFilter(1)}>
                         Web Dev
                     </div>
-                    <div className={styles.navItem} style={active === 2 ? activeItem : null} onClick={() => setActive(2)}>
+                    <div className={styles.navItem} style={active === 2 ? activeItem : null} onClick={() => handleFilter(2)}>
                         Technical
                     </div>
-                    <div className={styles.navItem} style={active === 3 ? activeItem : null} onClick={() => setActive(3)}>
+                    <div className={styles.navItem} style={active === 3 ? activeItem : null} onClick={() => handleFilter(3)}>
                         Life
                     </div>
-                    <div className={styles.navItem} style={active === 4 ? activeItem : null} onClick={() => setActive(4)}>
+                    <div className={styles.navItem} style={active === 4 ? activeItem : null} onClick={() => handleFilter(4)}>
                         My Journey
                     </div>
+                    <select className={`${styles.navItem} ${styles.select}`} onChange={e => handleFilter(e.target.value)}>
+                        <option value="" disabled selected>Sort by</option>
+                        <option value="date">Date Modified</option>
+                    </select>
                 </section>
                 <section className={styles.blogWrapper}>
 
-                    {blogData.map(blog => 
+                    {blogs.map(blog =>
                         <BlogCard title={blog.frontmatter.title} date={blog.frontmatter.date} category={blog.frontmatter.category} description={blog.frontmatter.description} id={blog.frontmatter.id} slug={blog.frontmatter.slug} />
                     )}
 
-                    {/* <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
-                    <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
-                    <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
-                    <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
-                    <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} />
-                    <BlogCard title={"A guide to React"} date={"22nd March, 2021"} category={"Web Dev"} description={"An ultimate guide to learning the basics of react and react hooks"} /> */}
+
                 </section>
             </div>
         </Layout>
     )
 }
+
 export const query = graphql`
 query MyQuery {
     allMarkdownRemark(sort: {fields: frontmatter___id, order: ASC}) {
@@ -62,11 +100,9 @@ query MyQuery {
           id
           title
           slug
+          actualDate
         }
         html
       }
     }
-  }
-  
-  
-`
+  }`

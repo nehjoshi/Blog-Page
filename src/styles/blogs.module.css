@@ -47,6 +47,23 @@
   border-bottom: 2px solid #00b8e6;
 }
 
+.upperNav .select {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 2px solid transparent;
+}
+
+.upperNav .select:hover {
+  cursor: pointer;
+  border-bottom: 2px solid #00b8e6;
+}
+
+.upperNav .select option {
+  outline: none;
+  border: none;
+}
+
 .blogWrapper {
   height: 100vh;
   width: 100%;

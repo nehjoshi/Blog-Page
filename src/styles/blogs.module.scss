@@ -30,6 +30,20 @@
             border-bottom: 2px solid rgb(0, 184, 230);
         }
     }
+    .select {
+        border: none;
+        outline: none;
+        background-color: inherit;
+        border-bottom: 2px solid transparent;
+        &:hover {
+            cursor: pointer;
+            border-bottom: 2px solid rgb(0, 184, 230);
+        }
+        option {
+            outline: none;
+            border: none;
+        }
+    }
     
 }
 .blogWrapper {
