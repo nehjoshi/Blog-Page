@@ -1,5 +1,5 @@
 import React, { } from 'react'
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import * as styles from "../styles/blogPost.module.css";
 
@@ -9,6 +9,8 @@ export default function BlogPost({ data }) {
     const {title, date, category} = data.markdownRemark.frontmatter;
     return (
         <Layout>
+          <Link to="/blogs">
+          <p className={styles.goBack}>Go Back</p></Link>
             <div className={styles.wrapper}>
                 <span className={styles.category}>{category}</span>
                 <h1 className={styles.title}>{title}</h1>

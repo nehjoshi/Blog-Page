@@ -71,8 +71,26 @@
           justify-content: center;
 }
 
+@media screen and (max-width: 760px) {
+  .content {
+    padding: 0px 0px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .wrapper {
   width: 40%;
+}
+
+@media screen and (max-width: 760px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper h1, .wrapper p {
+    text-align: center;
+  }
 }
 
 .wrapper h1 {
@@ -111,6 +129,8 @@
   cursor: pointer;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: 3px solid white;
+  outline-offset: 2px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -118,6 +138,7 @@
 .button:hover {
   background-color: #960a0a;
   color: white;
+  outline: 3px solid #960a0a;
 }
 
 .button:active {

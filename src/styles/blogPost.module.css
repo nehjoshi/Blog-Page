@@ -43,4 +43,13 @@ body {
     font-size: 1.3rem;
   }
 }
+
+.goBack {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  font-size: 1.2rem;
+  color: #969696;
+  cursor: pointer;
+}
 /*# sourceMappingURL=blogPost.module.css.map */
