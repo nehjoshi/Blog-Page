@@ -6,6 +6,7 @@ date: 3rd October, 2021
 actualDate: "2021-10-03"
 category: Web dev
 slug: web-vulnerabilities-part1-php
+thumb: "../../images/php-logo.png"
 ---
 **Cyber Security Enthusiasts, welcome to the third part of this exclusive blog series exploring different web vulnerabilities and ways to fix them. Today we learn about the language that perhaps has lost its reputation over the years, yet still more than 75% of all websites are built with this. Websites like WordPress and Wikipedia use this language extensively. Today we talk about PHP!**  
 <br />

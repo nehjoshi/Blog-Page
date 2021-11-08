@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react'
 import BlogCard from '../../components/BlogCard';
 import Layout from '../../components/Layout';
@@ -9,6 +10,7 @@ export default function BlogIndex({ data }) {
     const [active, setActive] = React.useState(0);
     const blogData = data.allMarkdownRemark.nodes;
     const [blogs, setBlogs] = React.useState(blogData);
+    console.log(blogs);
     const activeItem = {
         backgroundColor: '#96d6ff',
         borderBottom: '1px solid #e5e5e5',
@@ -79,7 +81,14 @@ export default function BlogIndex({ data }) {
                 <section className={styles.blogWrapper}>
 
                     {blogs.map(blog =>
-                        <BlogCard title={blog.frontmatter.title} date={blog.frontmatter.date} category={blog.frontmatter.category} description={blog.frontmatter.description} id={blog.frontmatter.id} slug={blog.frontmatter.slug} />
+                        <BlogCard title={blog.frontmatter.title} 
+                        date={blog.frontmatter.date} 
+                        category={blog.frontmatter.category} 
+                        description={blog.frontmatter.description} 
+                        id={blog.frontmatter.id} 
+                        slug={blog.frontmatter.slug} 
+                        key={blog.frontmatter.id}
+                        image={blog.frontmatter.thumb} />
                     )}
 
 
@@ -101,8 +110,15 @@ query MyQuery {
           title
           slug
           actualDate
+          thumb {
+            childImageSharp {
+              gatsbyImageData(pngOptions: {quality: 10})
+            }
+          }
         }
         html
       }
     }
-  }`
+  }
+  
+  `

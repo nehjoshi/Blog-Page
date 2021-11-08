@@ -6,6 +6,7 @@ date: 2nd November, 2021
 actualDate: "2021-11-02"
 category: Web dev
 slug: web-vulnerabilities-part3-nodejs
+thumb: "../../images/node-logo.png"
 ---
 
 **Developers and Web Enthusiasts, welcome to this four-part blog series on Web Vulnerabilities and how to secure them! We’ll be exploring four major web technologies (that you probably use every day unknowingly), and we’ll see how these can become prone to attacks. We kick off this series with… Node.js!**  
