@@ -32,6 +32,7 @@ export default function BlogIndex({ data }) {
                 break;
             case 3:
                 setActive(3);
+                setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Life'));
                 break;
             case 4:
                 setActive(4);

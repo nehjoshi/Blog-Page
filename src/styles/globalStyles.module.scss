@@ -58,3 +58,15 @@ $text-color: rgb(129, 123, 123);
     background-color: rgb(255, 255, 255);
 
 }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #089cfc;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px;
+    
+    width: 100%;
+}

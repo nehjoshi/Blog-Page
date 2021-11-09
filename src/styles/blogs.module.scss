@@ -88,10 +88,10 @@
     flex-direction: column;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    padding: 20px 20px;
+    
     min-height: 300px;
-    height: fit-content;
-    border-radius: 2px;
+    height: 500px;
+    border-radius: 4px;
     border-bottom: 6px solid rgb(65, 93, 255);
     @media screen and (max-width: 768px) {
         margin: 10px 0px;
@@ -100,13 +100,18 @@
     h1 {
         font-size: 2rem;
         color: rgb(57, 47, 80);
+        padding: 0px 10px;
     }
     span {
         color: rgb(102, 0, 185);
         font-size: 1rem;
+        padding: 0px 10px;
+        margin-top: 10px;
     }
     p {
         color: rgb(131, 131, 131);
+        padding: 0px 10px;
+        margin-top: 5px;
     }
     img {
         height: 300px;
@@ -115,5 +120,6 @@
         color: rgb(94, 94, 94);
         margin-top: 10px;
         font-size: 1rem;
+        padding: 0px 10px;
     }
 }

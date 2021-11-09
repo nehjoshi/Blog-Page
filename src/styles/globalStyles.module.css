@@ -80,4 +80,22 @@
           align-items: center;
   background-color: white;
 }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  background-color: #089cfc;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 10px;
+  width: 100%;
+}
 /*# sourceMappingURL=globalStyles.module.css.map */
