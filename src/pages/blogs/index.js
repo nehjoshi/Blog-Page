@@ -18,14 +18,17 @@ export default function BlogIndex({ data }) {
     }
 
     const handleFilter = (cat) => {
+        console.log(cat);
         switch (cat) {
             case 1:
                 setActive(1);
                 setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Web dev'));
+                
                 break;
             case 2:
                 setActive(2);
                 setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Technical'));
+                console.log("called technical?");
                 break;
             case 3:
                 setActive(3);
@@ -34,7 +37,6 @@ export default function BlogIndex({ data }) {
                 setActive(4);
                 break;
             case "date":
-                console.log(blogs);
                 let sortedBlogs = blogs;
                 for (let i = 0; i < sortedBlogs.length; i++) {
                     for (let j = i; j < sortedBlogs.length; j++) {
@@ -49,6 +51,7 @@ export default function BlogIndex({ data }) {
                 setBlogs(blogs.filter(blog => blog.frontmatter.category));
                 break;
             default:
+                console.log("why is default getting called??");
                 setBlogs(blogData);
 
         }
@@ -61,21 +64,25 @@ export default function BlogIndex({ data }) {
                     <div className={styles.navHeading}>
                         Browse by Category
                     </div>
-                    <div className={styles.navItem} style={active === 1 ? activeItem : null} onClick={() => handleFilter(1)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 1 ? activeItem : null} onClick={() => handleFilter(1)}>
                         Web Dev
                     </div>
-                    <div className={styles.navItem} style={active === 2 ? activeItem : null} onClick={() => handleFilter(2)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 2 ? activeItem : null} onClick={() => handleFilter(2)}>
                         Technical
                     </div>
-                    <div className={styles.navItem} style={active === 3 ? activeItem : null} onClick={() => handleFilter(3)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 3 ? activeItem : null} onClick={() => handleFilter(3)}>
                         Life
                     </div>
-                    <div className={styles.navItem} style={active === 4 ? activeItem : null} onClick={() => handleFilter(4)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 4 ? activeItem : null} onClick={() => handleFilter(4)}>
                         My Journey
                     </div>
                     <select className={`${styles.navItem} ${styles.select}`} onChange={e => handleFilter(e.target.value)}>
                         <option value="" disabled selected>Sort by</option>
                         <option value="date">Date Modified</option>
+                        <option value={1} className={styles.responsiveOptions}>Web Dev</option>
+                        <option value={2} className={styles.responsiveOptions} >Technical</option>
+                        <option value={3} className={styles.responsiveOptions}>Life</option>
+                        <option value={4} className={styles.responsiveOptions}>My Journey</option>
                     </select>
                 </section>
                 <section className={styles.blogWrapper}>
