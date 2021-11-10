@@ -1,7 +1,6 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from '../styles/blogs.module.css';
-import bg from '../images/bg404.jpg';
 import { Link } from 'gatsby';
 
 export default function Blog( props ) {

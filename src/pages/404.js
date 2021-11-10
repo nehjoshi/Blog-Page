@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Layout>
       <div className={styles.notFoundWrapper}>
-        <img src = {bg404} style={{height: '500px'}}/>
+        <img src = {bg404} style={{height: '500px'}} alt="404"/>
       </div>
     </Layout>
   )

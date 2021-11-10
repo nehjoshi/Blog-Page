@@ -1,7 +1,6 @@
 .container {
-  position: relative;
-  top: 60px;
-  padding: 20px 0px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   width: 100%;
 }
 
@@ -89,9 +88,9 @@
 }
 
 .blogWrapper {
-  height: 100vh;
   width: 100%;
   padding: 20px 150px;
+  min-height: 80vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];

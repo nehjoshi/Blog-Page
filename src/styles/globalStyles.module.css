@@ -91,11 +91,46 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60px;
+  height: 80px;
   background-color: #089cfc;
   color: #fff;
   font-size: 1.1rem;
   padding: 10px;
   width: 100%;
+}
+
+@media screen and (max-width: 420px) {
+  .footer {
+    font-size: 0.9rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.footer .social a {
+  margin: 0px 10px;
+  margin-top: 5px;
+}
+
+.footer .social a .links {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 420px) {
+  .footer .social a .links {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=globalStyles.module.css.map */

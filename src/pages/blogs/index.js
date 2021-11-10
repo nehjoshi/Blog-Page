@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import React from 'react'
 import BlogCard from '../../components/BlogCard';
 import Layout from '../../components/Layout';
@@ -10,7 +9,6 @@ export default function BlogIndex({ data }) {
     const [active, setActive] = React.useState(0);
     const blogData = data.allMarkdownRemark.nodes;
     const [blogs, setBlogs] = React.useState(blogData);
-    console.log(blogs);
     const activeItem = {
         backgroundColor: '#96d6ff',
         borderBottom: '1px solid #e5e5e5',
@@ -18,17 +16,15 @@ export default function BlogIndex({ data }) {
     }
 
     const handleFilter = (cat) => {
-        console.log(cat);
-        switch (cat) {
+        switch (parseInt(cat)) {
             case 1:
                 setActive(1);
                 setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Web dev'));
-                
+
                 break;
             case 2:
                 setActive(2);
                 setBlogs(blogData.filter(blog => blog.frontmatter.category === 'Technical'));
-                console.log("called technical?");
                 break;
             case 3:
                 setActive(3);
@@ -52,7 +48,6 @@ export default function BlogIndex({ data }) {
                 setBlogs(blogs.filter(blog => blog.frontmatter.category));
                 break;
             default:
-                console.log("why is default getting called??");
                 setBlogs(blogData);
 
         }
@@ -65,16 +60,16 @@ export default function BlogIndex({ data }) {
                     <div className={styles.navHeading}>
                         Browse by Category
                     </div>
-                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 1 ? activeItem : null} onClick={() => handleFilter(1)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} aria-hidden="true" style={active === 1 ? activeItem : null} onClick={() => handleFilter(1)}>
                         Web Dev
                     </div>
-                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 2 ? activeItem : null} onClick={() => handleFilter(2)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} aria-hidden="true" style={active === 2 ? activeItem : null} onClick={() => handleFilter(2)}>
                         Technical
                     </div>
-                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 3 ? activeItem : null} onClick={() => handleFilter(3)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} aria-hidden="true" style={active === 3 ? activeItem : null} onClick={() => handleFilter(3)}>
                         Life
                     </div>
-                    <div className={`${styles.navItem} ${styles.navItemBlock}`} style={active === 4 ? activeItem : null} onClick={() => handleFilter(4)}>
+                    <div className={`${styles.navItem} ${styles.navItemBlock}`} aria-hidden="true" style={active === 4 ? activeItem : null} onClick={() => handleFilter(4)}>
                         My Journey
                     </div>
                     <select className={`${styles.navItem} ${styles.select}`} onChange={e => handleFilter(e.target.value)}>
@@ -89,14 +84,14 @@ export default function BlogIndex({ data }) {
                 <section className={styles.blogWrapper}>
 
                     {blogs.map(blog =>
-                        <BlogCard title={blog.frontmatter.title} 
-                        date={blog.frontmatter.date} 
-                        category={blog.frontmatter.category} 
-                        description={blog.frontmatter.description} 
-                        id={blog.frontmatter.id} 
-                        slug={blog.frontmatter.slug} 
-                        key={blog.frontmatter.id}
-                        image={blog.frontmatter.thumb} />
+                        <BlogCard title={blog.frontmatter.title}
+                            date={blog.frontmatter.date}
+                            category={blog.frontmatter.category}
+                            description={blog.frontmatter.description}
+                            id={blog.frontmatter.id}
+                            slug={blog.frontmatter.slug}
+                            key={blog.frontmatter.id}
+                            image={blog.frontmatter.thumb} />
                     )}
 
 
@@ -120,7 +115,7 @@ query MyQuery {
           actualDate
           thumb {
             childImageSharp {
-              gatsbyImageData(pngOptions: {quality: 10})
+              gatsbyImageData(pngOptions: {quality: 10}, jpgOptions: {quality: 10}) 
             }
           }
         }

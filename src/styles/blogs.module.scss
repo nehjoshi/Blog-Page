@@ -1,7 +1,6 @@
 .container {
-    position: relative;
-    top: 60px;
-    padding: 20px 0px;
+    padding-top: 80px;
+    padding-bottom: 60px;
     width: 100%;
 }
 .upperNav {
@@ -67,9 +66,9 @@
     
 }
 .blogWrapper {
-    height: 100vh;
     width: 100%;
     padding: 20px 150px;
+    min-height: 80vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
