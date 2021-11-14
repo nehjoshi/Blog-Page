@@ -84,15 +84,6 @@
   width: 40%;
 }
 
-@media screen and (max-width: 760px) {
-  .wrapper {
-    width: 100%;
-  }
-  .wrapper h1, .wrapper p {
-    text-align: center;
-  }
-}
-
 .wrapper h1 {
   color: #9B3E63;
   font-size: 5rem;
@@ -102,6 +93,22 @@
   color: white;
   font-size: 1.2rem;
   line-height: 30px;
+}
+
+@media screen and (max-width: 760px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper h1 {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .wrapper p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: normal;
+    line-height: 25px;
+  }
 }
 
 .button {
@@ -143,5 +150,13 @@
 
 .button:active {
   background-color: #3d0505;
+}
+
+@media screen and (max-width: 760px) {
+  .button {
+    padding: 10px 30px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=landing.module.css.map */
